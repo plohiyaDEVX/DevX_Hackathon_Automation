@@ -77,7 +77,7 @@ When('I enter {string} in the last name field', (lastName) => {
   employeeListPage.enterLastName(lastName);
 });
 
-When('I enter {string} in the email field', (email) => {
+When('I enter {string} in the employee email field', (email) => {
   employeeListPage.enterEmail(email);
 });
 
@@ -101,7 +101,7 @@ When('I fill in all employee form fields with valid data', () => {
   employeeListPage.enterPhoneNumber(`${timestamp}`.slice(-7));
 });
 
-When('I select all required dropdown values', () => {
+When('I select all required employee dropdown values', () => {
   employeeListPage.selectEmploymentType('FTE');
   employeeListPage.selectEmployeeStatus('Active');
 });

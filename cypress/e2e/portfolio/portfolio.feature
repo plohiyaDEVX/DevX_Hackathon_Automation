@@ -29,7 +29,7 @@ Feature: Portfolio Management
     When I click the "New Portfolio" button
     And I click on the portfolio industry dropdown
     And I type "4" in the industry field
-    Then the industry should be selected
+    Then the portfolio industry should be selected
     When I click on the portfolio region dropdown
     And I type "11" in the region field
     Then the region should be selected

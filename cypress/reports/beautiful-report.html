@@ -199,25 +199,25 @@
         
         <div class="stats-grid fade-in">
             <div class="stat-card">
-                <div class="stat-number passed">24</div>
+                <div class="stat-number passed">36</div>
                 <div class="stat-label">Tests Passed</div>
                 <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">Successful scenarios</div>
             </div>
             
             <div class="stat-card">
-                <div class="stat-number failed">12</div>
+                <div class="stat-number failed">0</div>
                 <div class="stat-label">Tests Failed</div>
                 <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">Failed scenarios</div>
             </div>
             
             <div class="stat-card">
-                <div class="stat-number duration">314s</div>
+                <div class="stat-number duration">266s</div>
                 <div class="stat-label">Total Duration</div>
                 <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">Execution time</div>
             </div>
             
             <div class="stat-card">
-                <div class="stat-number total">67%</div>
+                <div class="stat-number total">100%</div>
                 <div class="stat-label">Success Rate</div>
                 <div style="margin-top: 10px; font-size: 0.9em; opacity: 0.7;">Overall performance</div>
             </div>
@@ -242,18 +242,39 @@
         <div class="features-grid fade-in">
             
                 <div class="feature-card">
-                    <div class="feature-title">Employee List Management</div>
+                    <div class="feature-title">Client Management</div>
                     <div class="feature-stats">
                         <div class="feature-stat">
-                            <div class="feature-stat-number passed">10</div>
+                            <div class="feature-stat-number passed">14</div>
                             <div class="feature-stat-label">Passed</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-number failed">11</div>
+                            <div class="feature-stat-number failed">0</div>
                             <div class="feature-stat-label">Failed</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-number total">48%</div>
+                            <div class="feature-stat-number total">100%</div>
+                            <div class="feature-stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                    <div class="feature-chart">
+                        <canvas id="feature-client-management-chart"></canvas>
+                    </div>
+                </div>
+              
+                <div class="feature-card">
+                    <div class="feature-title">Employee List Management</div>
+                    <div class="feature-stats">
+                        <div class="feature-stat">
+                            <div class="feature-stat-number passed">7</div>
+                            <div class="feature-stat-label">Passed</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number failed">0</div>
+                            <div class="feature-stat-label">Failed</div>
+                        </div>
+                        <div class="feature-stat">
+                            <div class="feature-stat-number total">100%</div>
                             <div class="feature-stat-label">Success Rate</div>
                         </div>
                     </div>
@@ -287,15 +308,15 @@
                     <div class="feature-title">Portfolio Management</div>
                     <div class="feature-stats">
                         <div class="feature-stat">
-                            <div class="feature-stat-number passed">6</div>
+                            <div class="feature-stat-number passed">7</div>
                             <div class="feature-stat-label">Passed</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-number failed">1</div>
+                            <div class="feature-stat-number failed">0</div>
                             <div class="feature-stat-label">Failed</div>
                         </div>
                         <div class="feature-stat">
-                            <div class="feature-stat-number total">86%</div>
+                            <div class="feature-stat-number total">100%</div>
                             <div class="feature-stat-label">Success Rate</div>
                         </div>
                     </div>
@@ -308,7 +329,7 @@
         
         <div class="footer">
             <p>Generated by Cypress BDD Framework | © 2026 Hackathon Automation Project</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Feature Files: 3 | Total Scenarios: 36</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Feature Files: 4 | Total Scenarios: 36</p>
         </div>
     </div>
 
@@ -323,7 +344,7 @@
             data: {
                 labels: ['Passed', 'Failed'],
                 datasets: [{
-                    data: [24, 12],
+                    data: [36, 0],
                     backgroundColor: [
                         'rgba(40, 167, 69, 0.8)',
                         'rgba(220, 53, 69, 0.8)'
@@ -366,18 +387,18 @@
         new Chart(featureBarCtx, {
             type: 'bar',
             data: {
-                labels: ["Employee List Management", "Login Page Functionality", "Portfolio Management"],
+                labels: ["Client Management", "Employee List Management", "Login Page Functionality", "Portfolio Management"],
                 datasets: [
                     {
                         label: 'Passed',
-                        data: [10, 8, 6],
+                        data: [14, 7, 8, 7],
                         backgroundColor: 'rgba(40, 167, 69, 0.8)',
                         borderColor: 'rgba(40, 167, 69, 1)',
                         borderWidth: 2
                     },
                     {
                         label: 'Failed',
-                        data: [11, 0, 1],
+                        data: [0, 0, 0, 0],
                         backgroundColor: 'rgba(220, 53, 69, 0.8)',
                         borderColor: 'rgba(220, 53, 69, 1)',
                         borderWidth: 2
@@ -403,13 +424,13 @@
         
         // Individual Feature Pie Charts
         
-            const feature_employee_list_management_chart_ctx = document.getElementById('feature-employee-list-management-chart').getContext('2d');
-            new Chart(feature_employee_list_management_chart_ctx, {
+            const feature_client_management_chart_ctx = document.getElementById('feature-client-management-chart').getContext('2d');
+            new Chart(feature_client_management_chart_ctx, {
                 type: 'doughnut',
                 data: {
                     labels: ['Passed', 'Failed'],
                     datasets: [{
-                        data: [10, 11],
+                        data: [14, 0],
                         backgroundColor: [
                             'rgba(40, 167, 69, 0.8)',
                             'rgba(220, 53, 69, 0.8)'
@@ -432,7 +453,46 @@
                             callbacks: {
                                 label: function(context) {
                                     const value = context.parsed;
-                                    const total = 21;
+                                    const total = 14;
+                                    const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
+                                    return `${context.label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+          
+            const feature_employee_list_management_chart_ctx = document.getElementById('feature-employee-list-management-chart').getContext('2d');
+            new Chart(feature_employee_list_management_chart_ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Passed', 'Failed'],
+                    datasets: [{
+                        data: [7, 0],
+                        backgroundColor: [
+                            'rgba(40, 167, 69, 0.8)',
+                            'rgba(220, 53, 69, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(40, 167, 69, 1)',
+                            'rgba(220, 53, 69, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const value = context.parsed;
+                                    const total = 7;
                                     const percentage = total > 0 ? ((value / total) * 100).toFixed(1) : 0;
                                     return `${context.label}: ${value} (${percentage}%)`;
                                 }
@@ -487,7 +547,7 @@
                 data: {
                     labels: ['Passed', 'Failed'],
                     datasets: [{
-                        data: [6, 1],
+                        data: [7, 0],
                         backgroundColor: [
                             'rgba(40, 167, 69, 0.8)',
                             'rgba(220, 53, 69, 0.8)'

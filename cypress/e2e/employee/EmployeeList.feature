@@ -49,7 +49,7 @@ Feature: Employee List Management
     When I click the "Add Employee" button
     And I enter "Miles" in the first name field
     And I enter "Ken" in the last name field
-    And I enter "Milesken@gmail.com" in the email field
+    And I enter "Milesken@gmail.com" in the employee email field
     And I enter "6474756" in the phone number field
     Then all form fields should contain the entered data
     And the "Save Changes" button should be enabled
@@ -68,7 +68,7 @@ Feature: Employee List Management
   Scenario: Complete employee creation workflow
     When I click the "Add Employee" button
     And I fill in all employee form fields with valid data
-    And I select all required dropdown values
+    And I select all required employee dropdown values
     And I save the employee record
     Then the new employee should appear in the employee list
     And I should be able to edit the newly created employee

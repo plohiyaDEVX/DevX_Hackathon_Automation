@@ -239,7 +239,7 @@ Then('the description field should be focused', () => {
   portfolioPage.verifyDescriptionFieldFocused();
 });
 
-Then('the industry should be selected', () => {
+Then('the portfolio industry should be selected', () => {
   portfolioPage.verifyIndustrySelected();
 });
 
