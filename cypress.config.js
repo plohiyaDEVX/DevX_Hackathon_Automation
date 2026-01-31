@@ -26,7 +26,7 @@ module.exports = defineConfig({
     reporter: 'cypress-mochawesome-reporter',
     reporterOptions: {
       charts: true,
-      reportPageTitle: '🚀 Login Automation - Beautiful Test Report',
+      reportPageTitle: 'DevX Hackathon Automation',
       embeddedScreenshots: true,
       inlineAssets: true,
       saveAllAttempts: false,
