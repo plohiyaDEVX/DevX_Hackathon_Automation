@@ -41,15 +41,21 @@ class PortfolioPage {
         return;
       }
       
-      // Try to find the portfolio menu link
+      // Try to find the portfolio menu link with multiple fallback strategies
       cy.get('body').then($body => {
         if ($body.find(this.portfolioMenuLink).length > 0) {
           // Use force click to bypass any overlay issues
           cy.get(this.portfolioMenuLink).click({force: true});
+        } else if ($body.find('a[href*="portfolio"]').length > 0) {
+          cy.get('a[href*="portfolio"]').first().click({force: true});
+        } else if ($body.find(':contains("Portfolio")').length > 0) {
+          cy.get(':contains("Portfolio")').first().click({force: true});
         } else {
-          cy.log('⚠️ Portfolio menu link not found, trying alternative navigation...');
-          // Try alternative selectors
-          cy.get('a[href*="portfolio"], [href*="portfolio"], :contains("Portfolio")').first().click({force: true});
+          cy.log('⚠️ Portfolio navigation not found, trying to refresh and navigate...');
+          cy.reload();
+          cy.wait(2000);
+          // Try again after reload
+          cy.get(this.portfolioMenuLink, { timeout: 10000 }).click({force: true});
         }
       });
     });

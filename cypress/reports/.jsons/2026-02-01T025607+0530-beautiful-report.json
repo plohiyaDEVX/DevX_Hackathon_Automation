@@ -1,0 +1,105 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2026-01-31T21:26:07.287Z",
+    "end": "2026-01-31T21:26:07.768Z",
+    "duration": 481,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "59149fcf-e427-428e-9af8-aa20710dbc85",
+      "title": "",
+      "fullFile": "cypress\\e2e\\portfolio\\portfolio.feature",
+      "file": "cypress\\e2e\\portfolio\\portfolio.feature",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "An uncaught error was detected outside of a test",
+          "fullTitle": "An uncaught error was detected outside of a test",
+          "timedOut": null,
+          "duration": 159,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\portfolio\\\\portfolio.feature\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\portfolio\\\\portfolio.feature\\\\An uncaught error was detected outside of a test (failed).png\"\n      ],\n      [\n        \"\\\\portfolio\\\\portfolio.feature\\\\An uncaught error was detected outside of a test (failed) (attempt 2).png\"\n      ],\n      [\n        \"\\\\portfolio\\\\portfolio.feature\\\\An uncaught error was detected outside of a test (failed) (attempt 3).png\"\n      ]\n    ]\n  }\n]",
+          "code": "throw err;",
+          "err": {
+            "message": "TypeError: The following error originated from your test code, not from Cypress.\n\n  > import_EmployeeListPage.default is not a constructor\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.",
+            "estack": "TypeError: The following error originated from your test code, not from Cypress.\n\n  > import_EmployeeListPage.default is not a constructor\n\nWhen Cypress detects uncaught errors originating from your test code it will automatically fail the current test.\n\nCypress could not associate this error to any specific test.\n\nWe dynamically generated a new test to display this failure.\n    at cypress/support/stepDefinitions/employee/employeeListSteps.js (http://localhost:5173/__cypress/tests?p=cypress\\e2e\\portfolio\\portfolio.feature:17919:26)\n    at __init (http://localhost:5173/__cypress/tests?p=cypress\\e2e\\portfolio\\portfolio.feature:9:58)\n    at eval (http://localhost:5173/__cypress/tests?p=cypress\\e2e\\portfolio\\portfolio.feature:18085:3)\n    at eval (http://localhost:5173/__cypress/tests?p=cypress\\e2e\\portfolio\\portfolio.feature:18088:3)\n    at eval (<anonymous>)",
+            "diff": null
+          },
+          "uuid": "aa49a6e9-17dc-4f57-ab33-2d17209c5e04",
+          "parentUUID": "59149fcf-e427-428e-9af8-aa20710dbc85",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "aa49a6e9-17dc-4f57-ab33-2d17209c5e04"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 159,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[datetime]-beautiful-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "DevX Hackathon Automation",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "reportDir": "cypress\\reports\\.jsons",
+        "reportFilename": "[datetime]-beautiful-report",
+        "timestamp": "isoDateTime",
+        "videoOnFailOnly": false,
+        "showPassed": true,
+        "showFailed": true,
+        "showPending": true,
+        "showSkipped": false,
+        "enableCode": true,
+        "enableCharts": true,
+        "autoOpen": false,
+        "overwrite": false,
+        "json": true,
+        "html": false
+      },
+      "version": "6.3.2"
+    }
+  }
+}
