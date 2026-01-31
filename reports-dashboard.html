@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚀 Login Automation Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #5a67d8;
+        }
+        
+        .card ul {
+            list-style: none;
+        }
+        
+        .card li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .card li:last-child {
+            border-bottom: none;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        }
+        
+        .btn-info {
+            background: linear-gradient(135deg, #17a2b8 0%, #6f42c1 100%);
+        }
+        
+        .actions {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .status.passed {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .status.running {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            color: white;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Login Automation Dashboard</h1>
+            <p>Cypress BDD Framework - Beautiful Test Reports</p>
+        </div>
+        
+        <div class="dashboard">
+            <div class="card">
+                <h3>📊 Test Status</h3>
+                <ul>
+                    <li>Framework: <span class="status passed">Ready</span></li>
+                    <li>Last Run: <span id="lastRun">Not executed yet</span></li>
+                    <li>Test Environment: localhost:5173/login</li>
+                    <li>Total Tests: 8 scenarios</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🎯 Test Coverage</h3>
+                <ul>
+                    <li>✅ Valid Login Flow</li>
+                    <li>❌ Invalid Credentials</li>
+                    <li>🔍 Form Validation</li>
+                    <li>📱 Responsive Design</li>
+                    <li>♿ Accessibility</li>
+                    <li>🔒 Security (Password Masking)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>🔧 Available Commands</h3>
+                <ul>
+                    <li><code>npm run test:login</code> - Run all login tests</li>
+                    <li><code>npm run test:login:headed</code> - Run with browser visible</li>
+                    <li><code>npm run test:report</code> - Run tests & generate report</li>
+                    <li><code>npm run generate:report</code> - Generate beautiful reports</li>
+                    <li><code>npm run clean:reports</code> - Clean old reports</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>📁 Report Locations</h3>
+                <ul>
+                    <li>Mochawesome: <code>/cypress/reports/*.html</code></li>
+                    <li>Cucumber HTML: <code>/cypress/reports/cucumber-html-reports/</code></li>
+                    <li>Screenshots: <code>/cypress/screenshots/</code></li>
+                    <li>Videos: <code>/cypress/videos/</code></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="#" class="btn btn-success" onclick="runTests()">🚀 Run Tests & Generate Reports</a>
+            <a href="cypress/reports/cucumber-html-reports/index.html" class="btn btn-info" target="_blank">📊 View Latest Report</a>
+        </div>
+        
+        <div class="footer">
+            <p>Generated by Cypress BDD Automation Framework | © 2026 Hackathon Project</p>
+        </div>
+    </div>
+
+    <script>
+        function runTests() {
+            alert('Execute: npm run test:report');
+            // In a real implementation, this would trigger the test execution
+        }
+        
+        // Update last run time if available
+        document.getElementById('lastRun').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "validUsers": [
+    {
+      "id": 1,
+      "username": "something@company.com",
+      "password": "password@123",
+      "email": "something@company.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "user",
+      "isActive": true
+    }
+  ],
+  "invalidUsers": [
+    {
+      "id": 2,
+      "username": "invalid@email.com",
+      "password": "password@123",
+      "email": "invalid@email.com",
+      "firstName": "Invalid",
+      "lastName": "User",
+      "role": "user",
+      "isActive": false,
+      "description": "Invalid username for testing"
+    },
+    {
+      "id": 3,
+      "username": "something@company.com",
+      "password": "wrongpassword",
+      "email": "something@company.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "role": "user",
+      "isActive": true,
+      "description": "Valid username with wrong password"
+    }
+  ],
+  "emptyUser": {
+    "username": "",
+    "password": "",
+    "email": "",
+    "description": "Empty credentials for validation testing"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "validUser": {
+    "username": "something@company.com",
+    "password": "password@123",
+    "email": "something@company.com"
+  },
+  "invalidUsers": [
+    {
+      "username": "invalid@email.com",
+      "password": "password@123",
+      "description": "Invalid username"
+    },
+    {
+      "username": "something@company.com",
+      "password": "wrongpassword",
+      "description": "Invalid password"
+    },
+    {
+      "username": "",
+      "password": "",
+      "description": "Empty credentials"
+    }
+  ],
+  "loginMessages": {
+    "success": "Login successful",
+    "invalidCredentials": "Invalid username or password",
+    "emptyFields": "Please fill in all required fields",
+    "userNotFound": "User not found"
+  },
+  "urls": {
+    "loginPage": "http://localhost:5173/login",
+    "homePage": "http://localhost:5173/",
+    "dashboardRedirect": "http://localhost:5173/dashboard"
+  }
+}

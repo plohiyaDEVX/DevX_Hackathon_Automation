@@ -1,0 +1,62 @@
+{
+  "name": "cypress-bdd-dashboard-automation",
+  "version": "1.0.0",
+  "description": "Cypress BDD automation framework for Dashboard page testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "test:login": "cypress run --spec 'cypress/e2e/login/**/*.feature'",
+    "test:login:headed": "cypress run --spec 'cypress/e2e/login/**/*.feature' --headed",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
+    "test:report": "cypress run --spec 'cypress/e2e/login/**/*.feature' && npm run generate:report",
+    "generate:report": "npx mochawesome-merge cypress/reports/.jsons/*.json -o cypress/reports/mochawesome.json && npx marge cypress/reports/mochawesome.json -f report -o cypress/reports",
+    "clean:reports": "rimraf cypress/reports cypress/screenshots cypress/videos",
+    "open:reports": "scripts/open-reports.bat"
+  },
+  "keywords": [
+    "cypress",
+    "bdd",
+    "cucumber",
+    "automation",
+    "testing",
+    "dashboard",
+    "pom"
+  ],
+  "author": "QA Automation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^24.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.8",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@octokit/rest": "^22.0.1",
+    "@types/node": "^20.10.0",
+    "axios": "^1.13.4",
+    "chart.js": "^4.5.1",
+    "cypress": "^13.6.0",
+    "cypress-mochawesome-reporter": "^3.8.4",
+    "dotenv": "^17.2.3",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^4.4.1",
+    "mochawesome-report-generator": "^6.3.2",
+    "multiple-cucumber-html-reporter": "^3.9.3",
+    "rimraf": "^6.1.2",
+    "typescript": "^5.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false,
+    "stepDefinitions": "cypress/support/stepDefinitions/**/*.js",
+    "html": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-html-report.html"
+    },
+    "json": {
+      "enabled": true,
+      "output": "cypress/reports/cucumber-json-report.json"
+    }
+  }
+}
