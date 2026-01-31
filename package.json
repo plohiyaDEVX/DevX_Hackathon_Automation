@@ -58,5 +58,8 @@
       "enabled": true,
       "output": "cypress/reports/cucumber-json-report.json"
     }
+  },
+  "dependencies": {
+    "glob": "^13.0.0"
   }
 }
